@@ -2,7 +2,7 @@
   #overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
+    width: 101%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;
     left: 0;
@@ -31,7 +31,7 @@
   .col-md-12{style: 'text-align: center;top: 32%;margin-bottom:30px;'}
     %p.links Welcome
   .col-md-12.logo_stuff
-    %img#logo{src: 'assets/logo.PNG'}
+    #logo= image_tag 'logo.PNG'
   .col-md-12{style: 'text-align: center;top: 32%;'}
     %a.links{href: '/shop', id: 'enter_shop'} Enter Shop
 
