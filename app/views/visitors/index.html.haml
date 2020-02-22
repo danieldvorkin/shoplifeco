@@ -12,4 +12,24 @@
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
+  #logo {
+    text-align: center;
+    position: relative;
+    top: 25%;
+    font-size: 200px;
+  }
+  #enter_shop {
+    position: relative;
+    text-align: center;
+    margin: 0px 50%;
+    top: 250px;
+  }
+
 #overlay
+  %p#logo LIFE co.
+  %br
+  %a{href: '/shop', id: 'enter_shop'} Enter Shop
+
+:javascript
+  $('.navbar').hide();
+  $('#overlay').show();
