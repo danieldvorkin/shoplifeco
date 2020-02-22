@@ -1,6 +1,7 @@
 %nav.navbar.navbar-expand-lg.fixed-top
   .container
-    %a.navbar-brand{:href => "#"} LIFE co.
+    %a.navbar-brand{:href => root_path} 
+      = image_tag 'logo.PNG', width: '100px'
     %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarResponsive.collapse.navbar-collapse

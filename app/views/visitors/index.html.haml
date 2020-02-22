@@ -12,23 +12,28 @@
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
-  #logo {
-    text-align: center;
+  .logo_stuff {
     position: relative;
-    top: 25%;
-    font-size: 200px;
+    top: 30%;
+    margin: 0 auto;
+    text-align: center;
   }
-  #enter_shop {
-    position: relative;
-    text-align: center;
-    margin: 0px 50%;
-    top: 250px;
+  .links {
+    font-size:25px;
+    color:white;
+  }
+  #enter_shop:hover {
+    color: silver;
+    text-decoration: none;
   }
 
-#overlay
-  %p#logo LIFE co.
-  %br
-  %a{href: '/shop', id: 'enter_shop'} Enter Shop
+#overlay.row
+  .col-md-12{style: 'text-align: center;top: 32%;margin-bottom:30px;'}
+    %p.links Welcome
+  .col-md-12.logo_stuff
+    %img#logo{src: 'assets/logo.PNG'}
+  .col-md-12{style: 'text-align: center;top: 32%;'}
+    %a.links{href: '/shop', id: 'enter_shop'} Enter Shop
 
 :javascript
   $('.navbar').hide();
