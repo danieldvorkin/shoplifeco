@@ -17,6 +17,11 @@
     background-color:white;
  }
 
+ a:hover {
+  color: black;
+  background-color: #fff;
+}
+
  #overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
