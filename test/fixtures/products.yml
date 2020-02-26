@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  season: MyString
+  price: 1.5
+  cost: 1.5
+  active: false
+  description: MyText
+  short_desc: MyString
+  sale: false
+  stock: 1
+  preorder: 1
+  preorder: false
+
+two:
+  name: MyString
+  season: MyString
+  price: 1.5
+  cost: 1.5
+  active: false
+  description: MyText
+  short_desc: MyString
+  sale: false
+  stock: 1
+  preorder: 1
+  preorder: false
