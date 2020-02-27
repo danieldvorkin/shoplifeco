@@ -1,0 +1,10 @@
+# config/initializers/smtp.rb
+ActionMailer::Base.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    domain: 'yourdomain.com',
+    user_name: Rails.application.credentials.sendgrid_username,
+    password: Rails.application.credentials.sendgrid_password,
+    authentication: :login,
+    enable_starttls_auto: true
+  }
