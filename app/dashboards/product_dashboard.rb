@@ -21,6 +21,7 @@ class ProductDashboard < Administrate::BaseDashboard
     preorder: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    attachments: Field::ActiveStorage,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -51,6 +52,7 @@ class ProductDashboard < Administrate::BaseDashboard
   preorder
   created_at
   updated_at
+  attachments
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -67,6 +69,7 @@ class ProductDashboard < Administrate::BaseDashboard
   sale
   stock
   preorder
+  attachments
   ].freeze
 
   # COLLECTION_FILTERS
@@ -87,4 +90,8 @@ class ProductDashboard < Administrate::BaseDashboard
   # def display_resource(product)
   #   "Product ##{product.id}"
   # end
+
+  def permitted_attributes
+    super + [:attachments => []]
+  end
 end

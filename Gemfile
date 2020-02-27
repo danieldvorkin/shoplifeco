@@ -22,6 +22,9 @@ gem 'high_voltage'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'mini_racer'
+gem 'administrate-field-active_storage'
+gem "aws-sdk-s3", require: false
+gem "mini_magick"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -1,5 +1,11 @@
 module Admin
   class ProductsController < Admin::ApplicationController
+    before_action :authenticate_user!
+    before_action :authenticate_admin
+
+    def authenticate_admin
+      redirect_to root_path, alert: 'Not authorized.' unless current_user.role == "admin"
+    end
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
@@ -27,6 +33,10 @@ module Admin
     #    resource_class.with_less_stuff
     #  end
     # end
+
+    def scoped_resource
+      resource_class.with_attached_attachments
+    end
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
