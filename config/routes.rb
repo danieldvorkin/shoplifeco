@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :products
 
       root to: "users#index"
+      delete "custom_active_record_remove", to: 'products#remove_attachment'
     end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'visitors#index'
@@ -12,5 +13,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :products
-  delete "custom_active_record_remove", to: 'users#remove_avatar'
+  
 end

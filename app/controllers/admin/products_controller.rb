@@ -33,6 +33,12 @@ module Admin
     #    resource_class.with_less_stuff
     #  end
     # end
+    def remove_attachment
+      attachment = ActiveStorage::Attachment.find(params[:attachment_id])
+      attachment.purge
+      
+      redirect_back(fallback_location: "/admin/products")
+    end
 
     def scoped_resource
       resource_class.with_attached_attachments

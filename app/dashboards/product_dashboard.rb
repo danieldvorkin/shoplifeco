@@ -21,7 +21,7 @@ class ProductDashboard < Administrate::BaseDashboard
     preorder: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    attachments: Field::ActiveStorage,
+    attachments: Field::ActiveStorage.with_options({destroy_path: :admin_custom_active_record_remove_path}),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
