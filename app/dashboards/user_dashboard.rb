@@ -11,6 +11,8 @@ class UserDashboard < Administrate::BaseDashboard
     invited_by: Field::Polymorphic,
     id: Field::Number,
     email: Field::String,
+    password: Field::String,
+    password_confirmation: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
@@ -37,35 +39,20 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  invited_by
   id
+  name
   email
-  encrypted_password
+  confirmed_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  invited_by
-  id
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
-  created_at
-  updated_at
   name
-  confirmation_token
   confirmed_at
   confirmation_sent_at
-  unconfirmed_email
   role
-  invitation_token
-  invitation_created_at
-  invitation_sent_at
-  invitation_accepted_at
-  invitation_limit
   invitations_count
   ].freeze
 
@@ -73,24 +60,11 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  invited_by
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
+  password
+  password_confirmation
   name
-  confirmation_token
-  confirmed_at
-  confirmation_sent_at
-  unconfirmed_email
-  role
-  invitation_token
-  invitation_created_at
-  invitation_sent_at
-  invitation_accepted_at
-  invitation_limit
-  invitations_count
+  role  
   ].freeze
 
   # COLLECTION_FILTERS
