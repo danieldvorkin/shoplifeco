@@ -1,39 +1,24 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @product.name
-%p
-  %b Season:
-  = @product.season
-%p
-  %b Price:
-  = @product.price
-%p
-  %b Cost:
-  = @product.cost
-%p
-  %b Active:
-  = @product.active
-%p
-  %b Description:
-  = @product.description
-%p
-  %b Short desc:
-  = @product.short_desc
-%p
-  %b Sale:
-  = @product.sale
-%p
-  %b Stock:
-  = @product.stock
-%p
-  %b Preorder:
-  = @product.preorder
-%p
-  %b Preorder:
-  = @product.preorder
-
-= link_to 'Edit', edit_product_path(@product)
-\|
-= link_to 'Back', products_path
+.container
+  / Portfolio Item Heading
+  %h1.my-4
+    = @product.name
+    %small= @product.season
+  / Portfolio Item Row
+  .row
+    .col-md-8
+      = image_tag(@product.attachments.first, class: 'img-fluid', alt: @product.name)
+    .col-md-4
+      %h3.my-3 Project Description
+      %p= @product.description
+      %h3.my-3 Project Details
+      %p= @product.short_desc
+  / /.row
+  / Related Projects Row
+  %h3.my-4 Related Projects
+  .row
+    - @related.each do |product|
+      .col-md-3.col-sm-6.mb-4
+        = link_to product do |link|
+          = image_tag(product.attachments.first, class: 'img-fluid')

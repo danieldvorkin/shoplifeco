@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    offset = rand(Product.where(active: true).count)
+    @related = Product.offset(offset).limit(4).select {|p| p.id != @product.id}
   end
 
   # GET /products/new

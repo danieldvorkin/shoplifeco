@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get '/shop/most_recent', to: 'visitors#most_recent'
   devise_for :users
   resources :users
+  resources :products
   delete "custom_active_record_remove", to: 'users#remove_avatar'
 end
