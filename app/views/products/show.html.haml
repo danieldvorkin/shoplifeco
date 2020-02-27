@@ -10,9 +10,8 @@
     .col-md-8
       = image_tag(@product.attachments.first, class: 'img-fluid', alt: @product.name)
     .col-md-4
-      %h3.my-3 Project Description
-      %p= @product.description
-      %h3.my-3 Project Details
+      %p
+        %strong= @product.description
       %p= @product.short_desc
   / /.row
   / Related Projects Row
